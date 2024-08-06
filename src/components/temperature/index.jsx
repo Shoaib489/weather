@@ -180,7 +180,8 @@ const Temperature = () => {
 
   return (
     <div className={classes.mainflex} style={{ backgroundImage: `url(${getBackground(city?.weatherDescription)})` }}>
-      <div className={classes.tempSearch}>
+        <div className={classes.flexsite}>
+        <div className={classes.tempSearch}>
         <div className='flex justify-center gap-3 capitalize'>
           <input
             className={`${classes.styleInput} capitalize`}
@@ -255,7 +256,7 @@ const Temperature = () => {
       </div>
       <div className={classes.movetobottom}>
         {searchHistory.length > 0 && (
-          <div className='flex capitalize gap-4 text-[14px] absolute right-[30px] top-[30px] w-[650px] flex-wrap justify-end border'>
+          <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  border`}>
             {searchHistory.slice(-8).map((historyItem, index) => (
               <div
                 key={index}
@@ -282,6 +283,8 @@ const Temperature = () => {
           </div>
         )}
       </div>
+        </div>
+     
     </div>
   );
 };

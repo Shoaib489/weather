@@ -2,13 +2,13 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     backdrop-filter: blur(10px);
     height: 490px;
-    width: 400px;
+    min-width: 400px;
     overflow: hidden;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 30px;
+    /* position: relative; */
+    /* top: 30px; */
     /* top: 50%;
     transform: translateY(-50%); */
     left: 30px;
@@ -37,15 +37,6 @@
     text-transform: uppercase;
 }
 
-.cityname {
-    /* border: 1px solid; */
-    height: 80px;
-    margin-top: 10px;
-}
-
-
-
-
 
 .saveData {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -53,64 +44,53 @@
     background-color: rgba(0, 0, 0, 0.371);
     color: white;
     font-weight: 400;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .mainflex {
     background-size: cover;
     height: 100vh;
     background-position: center;
+
+}
+
+.flexsite {
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
 }
 
-@media screen and (max-width:1100px) {
-    .tempSearch{
-        top: -5px;
-        left: -1px;
-        transform: scale(0.9);
-    }
-    .movetobottom{
-        position: relative;
-        transform: scale(0.9);
-        top: -30px;
-       
-
-    }
-}
-@media screen and (max-width:984px) {
-    .tempSearch{
-        top: -28px;
-        left: -20px;
-        transform: scale(0.8);
-    }
-    .movetobottom{
-        position: relative;
-        transform: scale(0.8);
-        top: -60px;
-       
-
-    }
-}
-
-@media screen and (max-width:878px) {
-  
-    .movetobottom{
-        display: flex;
-        position: relative;
-        transform: scale(0.8);
-        top: -60px;
+@media screen and (max-width:1097px) {
+    .savingdata {
+        flex-direction: row;
         flex-wrap: wrap;
-        flex-direction: column;
-       
-       
-
+        width: 305px;
+        height: 635px;
+        overflow: auto;
     }
 }
 
+@media screen and (max-width:760px) {
+    .flexsite {
+        flex-wrap: wrap;
 
-@media screen and (max-width:482px) {
-    .tempSearch{
-      top: -40px;
-        transform: scale(0.8);
+    }
+    .savingdata{
+        margin-top: 40px;
+        flex-direction: column;
+        width: 100%;
+        height: 150px;
+    }
+}
+@media screen and (max-width:760px) {
+    .flexsite {
+        flex-wrap: wrap;
+
+    }
+    .savingdata{
+    
+       
     }
 }
