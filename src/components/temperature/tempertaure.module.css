@@ -16,7 +16,8 @@
     gap: 20px;
     text-align: center;
     z-index: 200;
-    border: 1px solid;
+    border: 2px solid red;
+    transition: all 1s;
 
 }
 
@@ -38,79 +39,33 @@
 }
 
 .cityname {
-    /* border: 1px solid; */
     height: 80px;
     margin-top: 10px;
 }
-
-
-
-
 
 .saveData {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.371);
     color: white;
+    border: 2px solid rgb(255, 0, 0);
     font-weight: 400;
 }
 
 .mainflex {
+    border: 2px solid red;
     background-size: cover;
     height: 100vh;
     background-position: center;
     display: flex;
     justify-content: space-between;
 }
-
-@media screen and (max-width:1100px) {
-    .tempSearch{
-        top: -5px;
-        left: -1px;
-        transform: scale(0.9);
-    }
-    .movetobottom{
-        position: relative;
-        transform: scale(0.9);
-        top: -30px;
-       
-
-    }
+.changesavedata{
+    border: 2px solid blue;
+    display: flex;
+    gap: 10px;
 }
-@media screen and (max-width:984px) {
-    .tempSearch{
-        top: -28px;
-        left: -20px;
-        transform: scale(0.8);
-    }
-    .movetobottom{
-        position: relative;
-        transform: scale(0.8);
-        top: -60px;
-       
+.movetobottom{
+    /* border: 3px solid red; */
 
-    }
-}
-
-@media screen and (max-width:878px) {
-  
-    .movetobottom{
-        display: flex;
-        position: relative;
-        transform: scale(0.8);
-        top: -60px;
-        flex-wrap: wrap;
-        flex-direction: column;
-       
-       
-
-    }
-}
-
-
-@media screen and (max-width:482px) {
-    .tempSearch{
-      top: -40px;
-        transform: scale(0.8);
-    }
 }
