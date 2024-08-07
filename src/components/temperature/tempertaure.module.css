@@ -16,7 +16,7 @@
     gap: 20px;
     text-align: center;
     z-index: 200;
-    border: 1px solid;
+    /* border: 1px solid; */
 
 }
 
@@ -78,7 +78,7 @@
 
     }
     .savingdata{
-        margin-top: 40px;
+        margin-top: 20px;
         flex-direction: column;
         width: 100%;
         height: 150px;

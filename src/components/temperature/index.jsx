@@ -258,7 +258,7 @@ const Temperature = () => {
         </div>
         <div className={classes.movetobottom}>
           {searchHistory.length > 0 && (
-            <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  border`}>
+            <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  `}>
               {searchHistory.slice(-8).map((historyItem, index) => (
                 <div
                   key={index}
