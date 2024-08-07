@@ -209,7 +209,7 @@ const Temperature = () => {
                 </span>
               </div>
               <h1 className={classes.capitals}>{city.name}</h1>
-              <div className='flex items-center justify-center m-2 '>
+              <div className='flex items-center justify-center m-1 '>
                 <img src={`https://openweathermap.org/img/wn/${city.weatherIcon}.png`} alt="" width={"80px"} />
                 <h2 className='capitalize text-white'>{city.weatherDescription}</h2>
               </div>

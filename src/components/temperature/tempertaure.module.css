@@ -100,3 +100,14 @@
     }
   
 }
+@media screen and (max-width:390px) {
+    .tempSearch {
+      height: 436px !important;
+padding: 10px 10px 10px 10px ;
+
+    }
+    /* .flexsite{
+        height: 600px;
+    } */
+  
+}
