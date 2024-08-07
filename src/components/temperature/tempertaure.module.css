@@ -62,12 +62,22 @@
     gap: 20px;
 }
 
+.savingdata::-webkit-scrollbar{
+    display: none;
+}
+
 @media screen and (max-width:1097px) {
+    .saveData{
+        height: 160px;
+       display: flex;
+       gap:3px;
+       
+    }
     .savingdata {
         flex-direction: row;
         flex-wrap: wrap;
         width: 305px;
-        height: 635px;
+        height: 690px;
         overflow: auto;
     }
 }
@@ -81,7 +91,7 @@
         margin-top: 20px;
         flex-direction: column;
         width: 100%;
-        height: 150px;
+        height: 160px;
     }
 }
 

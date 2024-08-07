@@ -167,7 +167,7 @@ const Temperature = () => {
   };
 
   const handleHistoryClick = (historyItem) => {
-    setCity(historyItem);
+    setCity(historyItem.name);
     setSearch(historyItem.name);
     setQuery(historyItem.name);
   };
@@ -179,7 +179,7 @@ const Temperature = () => {
   };
 
   return (
-    <div className={classes.mainflex} style={{ backgroundImage: `url(${getBackground(city?.weatherDescription)})` }}>
+    <div className={classes.mainflex} style={{ backgroundImage: `url(${getBackground(city?.weatherDescription)})`}}>
       <div className={classes.flexsite}>
         <div className={classes.tempSearch}>
           <div className='flex justify-center gap-3 capitalize'>
@@ -258,11 +258,11 @@ const Temperature = () => {
         </div>
         <div className={classes.movetobottom}>
           {searchHistory.length > 0 && (
-            <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  `}>
+            <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap justify-end  `}>
               {searchHistory.slice(-8).map((historyItem, index) => (
                 <div
                   key={index}
-                  className={`${classes.saveData} p-4 rounded shadow w-[300px] flex-col cursor-pointer`}
+                  className={`${classes.saveData} p-4 rounded shadow w-[300px]  gap-2 flex-col cursor-pointer`}
                   onClick={() => handleHistoryClick(historyItem)}
                 >
                   <div className='flex justify-between items-center'>
