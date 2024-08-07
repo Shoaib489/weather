@@ -180,111 +180,113 @@ const Temperature = () => {
 
   return (
     <div className={classes.mainflex} style={{ backgroundImage: `url(${getBackground(city?.weatherDescription)})` }}>
-        <div className={classes.flexsite}>
+      <div className={classes.flexsite}>
         <div className={classes.tempSearch}>
-        <div className='flex justify-center gap-3 capitalize'>
-          <input
-            className={`${classes.styleInput} capitalize`}
-            type="text"
-            value={search}
-            placeholder='Search City Temperature ...'
-            onChange={(e) => setSearch(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button
-            className='bg-white rounded-full h-[40px] w-[40px] flex justify-center items-center capitalize  border-[3px] border-gray-400'
-            onClick={() => setQuery(search)}
-          >
-            <IconSearch stroke={2} className='w-[20px] h-[20px] text-[grey]' />
-          </button>
-        </div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : city ? (
-          <div>
-            <div className='flex items-center justify-center'>
-              <span style={{ color: getTemperatureColor(city.temp), fontSize: "55px", fontWeight: "700" }}>
-                {city.temp}
-                <IconTemperatureCelsius stroke={1.5} className='inline w-[50px] h-[55px]' />
-              </span>
-            </div>
-            <h1 className={classes.capitals}>{city.name}</h1>
-            <div className='flex items-center justify-center m-2 '>
-              <img src={`https://openweathermap.org/img/wn/${city.weatherIcon}.png`} alt="" width={"80px"} />
-              <h2 className='capitalize text-white'>{city.weatherDescription}</h2>
-            </div>
-            <div className='flex justify-between'>
-              <div className='text-center  w-[160px] rounded-md 
+          <div className='flex justify-center gap-3 capitalize'>
+            <input
+              className={`${classes.styleInput} capitalize`}
+              type="text"
+              value={search}
+              placeholder='Search City Temperature ...'
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <button
+              className='bg-white rounded-full h-[40px] w-[40px] flex justify-center items-center capitalize  border-[3px] border-gray-400'
+              onClick={() => setQuery(search)}
+            >
+              <IconSearch stroke={2} className='w-[20px] h-[20px] text-[grey]' />
+            </button>
+          </div>
+          {loading ? (
+            <p>Loading...</p>
+          ) : city ? (
+            <div>
+              <div className='flex items-center justify-center'>
+                <span style={{ color: getTemperatureColor(city.temp), fontSize: "55px", fontWeight: "700" }}>
+                  {city.temp}
+                  <IconTemperatureCelsius stroke={1.5} className='inline w-[50px] h-[55px]' />
+                </span>
+              </div>
+              <h1 className={classes.capitals}>{city.name}</h1>
+              <div className='flex items-center justify-center m-2 '>
+                <img src={`https://openweathermap.org/img/wn/${city.weatherIcon}.png`} alt="" width={"80px"} />
+                <h2 className='capitalize text-white'>{city.weatherDescription}</h2>
+              </div>
+              <div className='flex justify-between'>
+                <div className='text-center  w-[160px] rounded-md 
               shadow-2xl
+              mr-2
                bg-[#ffffff1b] 
                backdrop-blur-md '
-              >
-                <p className='text-[15px] font-bold text-[#de3535]'>Max Temp</p>
-                <div className='flex justify-between p-2'>
-                  <IconTemperaturePlus stroke={2} color='red' />
-                  <p className='font-semibold  text-[#ffffffc1]'>{city.temp_max}°C</p>
+                >
+                  <p className='text-[15px] font-bold text-[#de3535]'>Max Temp</p>
+                  <div className='flex justify-between p-2'>
+                    <IconTemperaturePlus stroke={2} color='red' />
+                    <p className='font-semibold  text-[#ffffffc1]'>{city.temp_max}°C</p>
+                  </div>
+                </div>
+                <div className='text-center shadow-lg w-[160px] rounded-md backdrop-blur-md bg-[#ffffff13] '>
+                  <p className='text-[15px] font-bold text-[#359dde]'>Min Temp</p>
+                  <div className='flex justify-between p-2'>
+                    <IconTemperatureMinus stroke={2} color='#359dde' />
+                    <p className='font-semibold text-[#ffffffb6]'>{city.temp_min}°C</p>
+                  </div>
                 </div>
               </div>
-              <div className='text-center shadow-lg w-[160px] rounded-md backdrop-blur-md bg-[#ffffff13] '>
-                <p className='text-[15px] font-bold text-[#359dde]'>Min Temp</p>
-                <div className='flex justify-between p-2'>
-                  <IconTemperatureMinus stroke={2} color='#359dde' />
-                  <p className='font-semibold text-[#ffffffb6]'>{city.temp_min}°C</p>
+            
+              <div className='flex justify-between mt-3'>
+                <div className='text-center  w-[160px] rounded-md  shadow-2xl  backdrop-blur-md bg-[#ffffff14] mr-2'>
+                  <p className='text-[15px] font-bold text-[#E8960D]'>Humidity</p>
+                  <div className='flex justify-between p-2'>
+                    <IconDropletOff stroke={2} color='#E8960D' />
+                    <p className='font-semibold  text-[#ffffffbc]'>{city.humidity} g/m³</p>
+                  </div>
+                </div>
+                <div className='text-center  w-[160px] rounded-md shadow-lg backdrop-blur-2xl bg-[#ffffff0c]'>
+                  <p className='text-[15px] font-bold text-[#cccccc]'>Wind Speed</p>
+                  <div className='flex justify-between p-2'>
+                    <IconWind stroke={2} className='text-[#cbcbcb]' />
+                    <p className='font-semibold  text-[#ffffffb6]'>{city.wind_speed} km/h</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className='flex justify-between mt-3'>
-              <div className='text-center  w-[160px] rounded-md  shadow-2xl  backdrop-blur-md bg-[#ffffff14]'>
-                <p className='text-[15px] font-bold text-[#E8960D]'>Humidity</p>
-                <div className='flex justify-between p-2'>
-                  <IconDropletOff stroke={2} color='#E8960D' />
-                  <p className='font-semibold  text-[#ffffffbc]'>{city.humidity} g/m³</p>
-                </div>
-              </div>
-              <div className='text-center  w-[160px] rounded-md shadow-lg backdrop-blur-2xl bg-[#ffffff0c]'>
-                <p className='text-[15px] font-bold text-[#cccccc]'>Wind Speed</p>
-                <div className='flex justify-between p-2'>
-                  <IconWind stroke={2} className='text-[#cbcbcb]' />
-                  <p className='font-semibold  text-[#ffffffb6]'>{city.wind_speed} km/h</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <p>No data found</p>
-        )}
-      </div>
-      <div className={classes.movetobottom}>
-        {searchHistory.length > 0 && (
-          <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  border`}>
-            {searchHistory.slice(-8).map((historyItem, index) => (
-              <div
-                key={index}
-                className={`${classes.saveData} p-4 rounded shadow w-[300px] flex-col cursor-pointer`}
-                onClick={() => handleHistoryClick(historyItem)}
-              >
-                <div className='flex justify-between items-center'>
-                  <h3 className='capitalize text-[18px] font-semibold underline'>{historyItem.name}</h3>
-                  <button onClick={(e) => {
-                    e.stopPropagation();
-                    handleDelete(historyItem.name);
-                  }}>
-                    <IconTrash stroke={1.5} className='text-red-500 w-[20px]' />
-                  </button>
-                </div>
-                <p>
-                  Temperature: <span className='font-semibold' style={{ color: getTemperatureColor(historyItem.temp) }}>{historyItem.temp} °C</span>
-                </p>
-                <p>Description: {historyItem.weatherDescription}</p>
-                <p>Humidity: {historyItem.humidity} g/m³</p>
-                <p>Wind Speed: {historyItem.wind_speed} km/h</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+          ) : (
+            <p>No data found</p>
+          )}
         </div>
-     
+        <div className={classes.movetobottom}>
+          {searchHistory.length > 0 && (
+            <div className={`${classes.savingdata} flex capitalize gap-4 text-[14px]  w-[620px] flex-wrap  border`}>
+              {searchHistory.slice(-8).map((historyItem, index) => (
+                <div
+                  key={index}
+                  className={`${classes.saveData} p-4 rounded shadow w-[300px] flex-col cursor-pointer`}
+                  onClick={() => handleHistoryClick(historyItem)}
+                >
+                  <div className='flex justify-between items-center'>
+                    <h3 className='capitalize text-[18px] font-semibold underline'>{historyItem.name}</h3>
+                    <button onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(historyItem.name);
+                    }}>
+                      <IconTrash stroke={1.5} className='text-red-500 w-[20px]' />
+                    </button>
+                  </div>
+                  <p>
+                    Temperature: <span className='font-semibold' style={{ color: getTemperatureColor(historyItem.temp) }}>{historyItem.temp} °C</span>
+                  </p>
+                  <p>Description: {historyItem.weatherDescription}</p>
+                  <p>Humidity: {historyItem.humidity} g/m³</p>
+                  <p>Wind Speed: {historyItem.wind_speed} km/h</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
     </div>
   );
 };
